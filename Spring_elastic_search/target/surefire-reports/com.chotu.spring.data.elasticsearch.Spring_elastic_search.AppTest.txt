@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.chotu.spring.data.elasticsearch.Spring_elastic_search.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s - in com.chotu.spring.data.elasticsearch.Spring_elastic_search.AppTest
