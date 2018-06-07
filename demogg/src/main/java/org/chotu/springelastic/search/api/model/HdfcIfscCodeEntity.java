@@ -1,7 +1,8 @@
 package org.chotu.springelastic.search.api.model;
 
 import org.springframework.data.annotation.Id;
-
+import org.springframework.data.elasticsearch.annotations.Document;
+@Document(indexName = "foof", type = "model", shards = 2)
 public class HdfcIfscCodeEntity {
 	
 	
@@ -97,6 +98,10 @@ public class HdfcIfscCodeEntity {
 		CITY = cITY;
 		DISTRICT = dISTRICT;
 		STATE = sTATE;
+	}
+	public HdfcIfscCodeEntity(String string, int i, String string2, String string3, String string4, String string5,
+			String string6, String string7, String string8) {
+		// TODO Auto-generated constructor stub
 	}
 	public void setSTATE(String sTATE) {
 		STATE = sTATE;

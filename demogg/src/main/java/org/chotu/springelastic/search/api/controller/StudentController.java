@@ -20,12 +20,12 @@ public class StudentController {
 	@Autowired
 	private StudentService service;
 	@GetMapping("/allstudent")
-	public List<Student> allrecord(){
+	public Iterable<HdfcIfscCodeEntity> allrecord(){
 		
-		List<Student> st=new ArrayList<>();
+		List<HdfcIfscCodeEntity> st=new ArrayList<>();
 		
-		service.getall().forEach(s -> st.add(s));
-		return st;
+		
+		return  service.getPaginationData();
 	}
 	
 	

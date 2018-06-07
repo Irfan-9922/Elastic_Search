@@ -17,8 +17,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
-	@Autowired
-	private StudentRepository repository;
+	/*@Autowired
+	private StudentRepository repository;*/
+	
 	@Autowired
 	private ElasticsearchOperations opretions;
 	
@@ -28,13 +29,13 @@ public class StudentService {
 	@PostConstruct
 	public void loadData() {
 		
-		List<Student> student=new ArrayList<>();
-		/*student.add(new HdfcIfscCodeEntity("HDFC",76767,"I238","Ltur","pune,tilak nagar","127362","pune","pune","MH"));
-		student.add(new HdfcIfscCodeEntity("BOI",000,"df445","mumbai","pune,tilak nagar","127362","pune","pune","MH"));
-		student.add(new HdfcIfscCodeEntity("ICC",0000,"fgb454","pune","pune,tilak nagar","127362","pune","pune","MH"));
-		student.add(new HdfcIfscCodeEntity("HDFC",0000,"df45","pune","pune,tilak nagar","127362","pune","pune","MH"));
-		student.add(new HdfcIfscCodeEntity("ICC",4545,"df43","pune","pune,tilak nagar","127362","pune","pune","MH"));
-		student.add(new HdfcIfscCodeEntity("HDFC",4546,"sds43","pune","pune,tilak nagar","127362","pune","pune","MH"));
+		List<HdfcIfscCodeEntity> student=new ArrayList<>();
+		HdfcIfscCodeEntity e=new	 HdfcIfscCodeEntity("HDFC",76767,"I238","Ltur","pune,tilak nagar","127362","pune","pune","MH");
+		HdfcIfscCodeEntity e1=new HdfcIfscCodeEntity("BOI",000,"df445","mumbai","pune,tilak nagar","127362","pune","pune","MH");
+		HdfcIfscCodeEntity e2=new HdfcIfscCodeEntity("ICC",0000,"fgb454","pune","pune,tilak nagar","127362","pune","pune","MH");
+		HdfcIfscCodeEntity e3=new  HdfcIfscCodeEntity("HDFC",0000,"df45","pune","pune,tilak nagar","127362","pune","pune","MH");
+		HdfcIfscCodeEntity e4=new HdfcIfscCodeEntity("ICC",4545,"df43","pune","pune,tilak nagar","127362","pune","pune","MH");
+		/*student.add(new HdfcIfscCodeEntity("HDFC",4546,"sds43","pune","pune,tilak nagar","127362","pune","pune","MH"));
 		student.add(new HdfcIfscCodeEntity("ICC",57567,"htgh43","pune","pune,tilak nagar","127362","pune","pune","MH"));
 		student.add(new HdfcIfscCodeEntity("HDFC",6767,"dfd23","pune","pune,tilak nagar","127362","pune","pune","MH"));
 		student.add(new HdfcIfscCodeEntity("BOI",6767,"h54","pune","pune,tilak nagar","127362","pune","pune","MH"));
@@ -49,22 +50,25 @@ public class StudentService {
 		student.add(new HdfcIfscCodeEntity("ICC",56745,"cvb45","pune","pune,tilak nagar","127362","pune","pune","MH"));
 		student.add(new HdfcIfscCodeEntity("HDFC",2334,"232dgf","pune","pune,tilak nagar","127362","pune","pune","MH"));
 		*/
+		student.add(e4);
+		student.add(e1);
+		student.add(e2);
+		student.add(e3);
 		
-		student.add(new Student(1222, "Irfan"));
-		
-		opretions.putMapping(Student.class);
-		repository.save(student);
+		opretions.putMapping(HdfcIfscCodeEntity.class);
+		reg.save(student);
 	}
 	
-	public Iterable<Student> getall(){
+	/*public Iterable<Student> getall(){
 		return repository.findAll();
-	}
+	}*/
 	     
 	
 	
 	
-	/*public List<HdfcIfscCodeEntity> getPaginationData(Integer salary) {
-		return repository.findByIFSC(salary, new PageRequest(0, 2)).getContent();
-	}*/
+	public Iterable<HdfcIfscCodeEntity> getPaginationData() {
+	Iterable<HdfcIfscCodeEntity> dd = reg.findAll();
+	return dd;
+	}
 	
 }

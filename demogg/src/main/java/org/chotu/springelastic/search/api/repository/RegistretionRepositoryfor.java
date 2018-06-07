@@ -26,6 +26,7 @@
 package org.chotu.springelastic.search.api.repository;
 
 import org.chotu.springelastic.search.api.model.HdfcIfscCodeEntity;
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -39,6 +40,6 @@ import org.springframework.data.repository.CrudRepository;
  * 
  */
 
-public interface RegistretionRepositoryfor extends CrudRepository<HdfcIfscCodeEntity, Integer>{
+public interface RegistretionRepositoryfor extends ElasticsearchRepository<HdfcIfscCodeEntity, Integer>{
 
 }

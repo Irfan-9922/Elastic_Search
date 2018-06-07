@@ -8,16 +8,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-@Document(indexName = "users1", type = "users1", shards = 21)
 @Setter
 @Getter
 @AllArgsConstructor
 @ToString
 @NoArgsConstructor
+@Document(indexName = "foof", type = "model", shards = 2)
 public class Student {
 	@Id
 private int id;
 private String name;
+public Student() {
+	super();
+}
+public Student(int i, String string) {
+	// TODO Auto-generated constructor stub
+}
 
 
 }

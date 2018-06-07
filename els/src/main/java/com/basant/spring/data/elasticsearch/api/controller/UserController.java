@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.basant.spring.data.elasticsearch.api.model.Customer;
+import com.basant.spring.data.elasticsearch.api.model.HdfcIfscCodeEntity;
 import com.basant.spring.data.elasticsearch.api.service.CustomerService;
 
 @RestController
@@ -30,9 +31,10 @@ public class UserController {
 	
 	
 	@GetMapping("/getAll")
-	public List<Customer> getAll() {
-		List<Customer> users = new ArrayList<>();
+	public List<HdfcIfscCodeEntity> getAll() {
+		List<HdfcIfscCodeEntity> users = new ArrayList<>();
 	 service.findall1().forEach(use -> users.add(use));
+	 System.out.println(users);
 		return users;
 	}
 	

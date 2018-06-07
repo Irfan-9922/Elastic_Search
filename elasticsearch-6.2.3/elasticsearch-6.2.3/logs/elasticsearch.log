@@ -1,0 +1,30 @@
+[2018-05-25T15:39:00,392][INFO ][o.e.n.Node               ] [] initializing ...
+[2018-05-25T15:39:00,576][INFO ][o.e.e.NodeEnvironment    ] [JaoMah2] using [1] data paths, mounts [[(D:)]], net usable_space [350gb], net total_space [365.2gb], types [NTFS]
+[2018-05-25T15:39:00,577][INFO ][o.e.e.NodeEnvironment    ] [JaoMah2] heap size [990.7mb], compressed ordinary object pointers [true]
+[2018-05-25T15:39:00,580][INFO ][o.e.n.Node               ] node name [JaoMah2] derived from node ID [JaoMah2-QpKY-mddpsxaug]; set [node.name] to override
+[2018-05-25T15:39:00,580][INFO ][o.e.n.Node               ] version[6.2.3], pid[5456], build[c59ff00/2018-03-13T10:06:29.741383Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_121/25.121-b13]
+[2018-05-25T15:39:00,581][INFO ][o.e.n.Node               ] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=C:\Users\IC179~1.SHA\AppData\Local\Temp\elasticsearch, -XX:+HeapDumpOnOutOfMemoryError, -XX:+PrintGCDetails, -XX:+PrintGCDateStamps, -XX:+PrintTenuringDistribution, -XX:+PrintGCApplicationStoppedTime, -Xloggc:logs/gc.log, -XX:+UseGCLogFileRotation, -XX:NumberOfGCLogFiles=32, -XX:GCLogFileSize=64m, -Delasticsearch, -Des.path.home=D:\UTIL\elasticsearch-6.2.3\elasticsearch-6.2.3, -Des.path.conf=D:\UTIL\elasticsearch-6.2.3\elasticsearch-6.2.3\config]
+[2018-05-25T15:39:01,497][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [aggs-matrix-stats]
+[2018-05-25T15:39:01,498][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [analysis-common]
+[2018-05-25T15:39:01,499][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [ingest-common]
+[2018-05-25T15:39:01,500][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [lang-expression]
+[2018-05-25T15:39:01,500][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [lang-mustache]
+[2018-05-25T15:39:01,500][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [lang-painless]
+[2018-05-25T15:39:01,501][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [mapper-extras]
+[2018-05-25T15:39:01,501][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [parent-join]
+[2018-05-25T15:39:01,501][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [percolator]
+[2018-05-25T15:39:01,502][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [rank-eval]
+[2018-05-25T15:39:01,502][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [reindex]
+[2018-05-25T15:39:01,502][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [repository-url]
+[2018-05-25T15:39:01,502][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [transport-netty4]
+[2018-05-25T15:39:01,502][INFO ][o.e.p.PluginsService     ] [JaoMah2] loaded module [tribe]
+[2018-05-25T15:39:01,503][INFO ][o.e.p.PluginsService     ] [JaoMah2] no plugins loaded
+[2018-05-25T15:39:04,765][INFO ][o.e.d.DiscoveryModule    ] [JaoMah2] using discovery type [zen]
+[2018-05-25T15:39:05,246][INFO ][o.e.n.Node               ] initialized
+[2018-05-25T15:39:05,246][INFO ][o.e.n.Node               ] [JaoMah2] starting ...
+[2018-05-25T15:39:05,578][INFO ][o.e.t.TransportService   ] [JaoMah2] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2018-05-25T15:39:08,635][INFO ][o.e.c.s.MasterService    ] [JaoMah2] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {JaoMah2}{JaoMah2-QpKY-mddpsxaug}{PhKgVGy0Q-yYUcqhiD7uyA}{127.0.0.1}{127.0.0.1:9300}
+[2018-05-25T15:39:08,641][INFO ][o.e.c.s.ClusterApplierService] [JaoMah2] new_master {JaoMah2}{JaoMah2-QpKY-mddpsxaug}{PhKgVGy0Q-yYUcqhiD7uyA}{127.0.0.1}{127.0.0.1:9300}, reason: apply cluster state (from master [master {JaoMah2}{JaoMah2-QpKY-mddpsxaug}{PhKgVGy0Q-yYUcqhiD7uyA}{127.0.0.1}{127.0.0.1:9300} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2018-05-25T15:39:08,689][INFO ][o.e.g.GatewayService     ] [JaoMah2] recovered [0] indices into cluster_state
+[2018-05-25T15:39:08,824][INFO ][o.e.h.n.Netty4HttpServerTransport] [JaoMah2] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2018-05-25T15:39:08,826][INFO ][o.e.n.Node               ] [JaoMah2] started

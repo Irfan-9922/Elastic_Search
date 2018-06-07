@@ -21,7 +21,7 @@ public class ApplicationConfig {
 
 	@Bean
 	public ElasticsearchOperations elasticsearchTemplate() throws IOException {
-		File tmpDir = File.createTempFile("elastic", Long.toString(System.nanoTime()));
+		/*File tmpDir = File.createTempFile("elastic", Long.toString(System.nanoTime()));
 		System.out.println("Temp directory: " + tmpDir.getAbsolutePath());
 		Settings.Builder elasticsearchSettings = Settings.settingsBuilder().put("http.enabled", "true") // 1
 				.put("index.number_of_shards", "1").put("path.data", new File(tmpDir, "data").getAbsolutePath()) // 2
@@ -29,7 +29,7 @@ public class ApplicationConfig {
 				.put("path.work", new File(tmpDir, "work").getAbsolutePath()) // 2
 				.put("path.home", tmpDir); // 3
 
-		return new ElasticsearchTemplate(builder().local(true).settings(elasticsearchSettings.build()).node().client());
-		//return new ElasticsearchTemplate(builder().local(true).node().client());
+		return new ElasticsearchTemplate(builder().local(true).settings(elasticsearchSettings.build()).node().client());*/
+		return new ElasticsearchTemplate(builder().local(true).node().client());
 	}
 }
