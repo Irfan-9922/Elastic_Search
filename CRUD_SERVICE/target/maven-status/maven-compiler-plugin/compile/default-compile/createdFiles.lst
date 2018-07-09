@@ -1,0 +1,8 @@
+org\dss\service\UtilWriter.class
+org\dss\SpringBootApp.class
+org\dss\beans\EmployeeEntity.class
+org\dss\dao\RegistretionRepository.class
+org\dss\service\ClientDemo.class
+org\dss\service\EmployeeService.class
+org\dss\PersistenceContext.class
+org\dss\service\SpringJava4sController.class

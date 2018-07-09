@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="41" started-at="2018-02-28T11:34:41Z" finished-at="2018-02-28T11:34:41Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="41" started-at="2018-02-28T11:34:41Z" finished-at="2018-02-28T11:34:41Z">
+      <class name="org.demo.TestNGSimpleTest">
+        <test-method status="PASS" signature="testAdd()[pri:0, instance:org.demo.TestNGSimpleTest@5d5eef3d]" name="testAdd" duration-ms="9" started-at="2018-02-28T11:34:41Z" finished-at="2018-02-28T11:34:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAdd -->
+      </class> <!-- org.demo.TestNGSimpleTest -->
+      <class name="org.demo.TestNGSimpleTest2">
+        <test-method status="PASS" signature="testAdd()[pri:0, instance:org.demo.TestNGSimpleTest2@3a82f6ef]" name="testAdd" duration-ms="3" started-at="2018-02-28T11:34:41Z" finished-at="2018-02-28T11:34:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAdd -->
+      </class> <!-- org.demo.TestNGSimpleTest2 -->
+      <class name="org.demo.TestngAnnotation">
+        <test-method status="PASS" signature="testApprisel()[pri:0, instance:org.demo.TestngAnnotation@100fc185]" name="testApprisel" duration-ms="1" started-at="2018-02-28T11:34:41Z" finished-at="2018-02-28T11:34:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApprisel -->
+        <test-method status="PASS" signature="testCase1()[pri:0, instance:org.demo.TestngAnnotation@100fc185]" name="testCase1" duration-ms="1" started-at="2018-02-28T11:34:41Z" finished-at="2018-02-28T11:34:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase1 -->
+      </class> <!-- org.demo.TestngAnnotation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
