@@ -3,6 +3,7 @@ package criteriabuilder.org.dss;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
@@ -33,37 +34,39 @@ public class CriteriaBuilderDemo {
 	private static EntityManager entityMgrObj = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME)
 			.createEntityManager();
 	static CriteriaBuilder criteriaBuilderObj = entityMgrObj.getCriteriaBuilder();
+	static CriteriaQuery<Employee> query=null;
 
 	public static void main(String[] args) {
 
 		long startTime = System.currentTimeMillis();
 
-		// ===================hibernate select opretion ==========================
+	/*	// ===================hibernate select opretion ==========================
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
-		/*
-		 * List list = session.createCriteria(Employee.class).list(); long endTime =
-		 * System.currentTimeMillis(); System.out.println("*************"+endTime);
-		 * System.out.println("###"+(endTime-startTime));
-		 * System.out.println("employee::"+list);
-		 * 
-		 * 
-		 * long startTime1 = System.currentTimeMillis();
+		
+		  List list = session.createCriteria(Employee.class).list(); long endTime =
+		  System.currentTimeMillis(); System.out.println("*************"+endTime);
+		 System.out.println("###"+(endTime-startTime));
+		  System.out.println("employee::"+list);
+		 
+		 
+		  long startTime1 = System.currentTimeMillis();
 		 */
 		// =======================================================
 
 		// ===================criteriabuilder select opretion ==========================
-		/*
-		 * System.out.println("*************"+startTime1); CriteriaBuilder
-		 * criteriaBuilderObj = entityMgrObj.getCriteriaBuilder();
-		 * 
-		 * // Making The Query Object From The 'CriteriaBuilder' Instance
-		 * CriteriaQuery<Object> queryObj = criteriaBuilderObj.createQuery();
-		 * Root<Employee> from = queryObj.from(Employee.class); CriteriaQuery<Object>
-		 * selctQuery = queryObj.select(from); TypedQuery<Object> ff =
-		 * entityMgrObj.createQuery(selctQuery); List<Object> gg = ff.getResultList();
-		 * System.out.println(gg.size()); System.out.println("*************"+endTime);
-		 * System.out.println("###"+(endTime-startTime1));
-		 */
+		  System.out.println("*************"+startTime); CriteriaBuilder
+		  criteriaBuilderObj = entityMgrObj.getCriteriaBuilder();
+		  
+		  // Making The Query Object From The 'CriteriaBuilder' Instance
+		  CriteriaQuery<Object> queryObj = criteriaBuilderObj.createQuery();
+		  Root<Employee> from = queryObj.from(Employee.class); CriteriaQuery<Object>
+		  selctQuery = queryObj.select(from); TypedQuery<Object> ff =
+		  entityMgrObj.createQuery(selctQuery); 
+		  List<Object> gg = ff.getResultList();
+		  System.out.println(gg);
+		  long endTime = System.currentTimeMillis();
+		  System.out.println("###"+(endTime-startTime));
+		 
 		// =======================================================
 
 		// ==================critria Jion ===================
@@ -78,19 +81,25 @@ public class CriteriaBuilderDemo {
 
 		// ==================critriaBuilder Jion ===================
 		List<Employee> list =new ArrayList<>();
-		CriteriaQuery<Employee> query = criteriaBuilderObj.createQuery(Employee.class);
-		Root<Employee> root = query.from(Employee.class);
+		query = criteriaBuilderObj.createQuery(Employee.class);
+		/*Root<Employee> root = query.from(Employee.class);
 		Join<Employee, Adress> joinforadress = root.join(Employee_.addresses);
 		Join<Adress, People> joinforpeople =joinforadress.join(Adress_.people);
-		
-		query.where(criteriaBuilderObj.equal(joinforpeople.get(People_.name), "vaadin"));
-	//	query.where(criteriaBuilderObj.equal(joinforadress.get(Adress_.zipcode), "1212"));
-		CriteriaQuery<Employee> result = query.select(root);
+		query.where(criteriaBuilderObj.equal(joinforpeople.get(People_.name), "sql"));
+		CriteriaQuery<Employee> result = query.select(root).where(adresscityPredicate(root));
 		System.out.println(result);
-		query.select(root);
+	//	query.select(root);
 		TypedQuery<Employee> resultQuery = entityMgrObj.createQuery(query);
 	 list = resultQuery.getResultList();
-		System.out.println(list);
+		System.out.println(list);*/
+		
+		//=====================================//
+		
+		Root<Employee> employeeRoot =query.from(Employee.class);
+		Root<People> adressRoot =query.from(People.class);
+		
+		
+		
 		
 		
 		
@@ -146,9 +155,11 @@ public class CriteriaBuilderDemo {
 		 */
 	}
 
-	public static Predicate namePredicate(Root<Employee> root) {
-		Predicate namepredicate = criteriaBuilderObj.equal(root.get("emp_name"), "rihan");
+	public static Predicate adresscityPredicate(Root<Employee> root) {
+		SetJoin<Employee, Adress> joinforadress = root.join(Employee_.addresses);
+		Predicate namepredicate = criteriaBuilderObj.equal(joinforadress.get(Adress_.CITY),"mumbai");
 		return namepredicate;
 	}
+	
 
 }
